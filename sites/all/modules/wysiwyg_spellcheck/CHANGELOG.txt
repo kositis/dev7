@@ -1,0 +1,32 @@
+
+wysiwyg_spellcheck 7.x-1.x-dev
+------------------------------
+
+
+wysiwyg_spellcheck 7.x-1.0, 2011-08-26
+--------------------------------------
+[NOISSUE] by iva2k: Created DRUPAL-7--1 branch
+[#793932] by seren10pity: Port to D7
+[NOISSUE] Renamed _wysiwyg_default_path() to _wysiwyg_spellcheck_default_path()
+[NOISSUE] Updated wysiwyg_spellcheck_wysiwyg_plugin() format to comply with http://drupal.org/node/767550
+
+
+wysiwyg_spellcheck 6.x-1.x-dev
+------------------------------
+[#755592] by iva2k: Test for TinyMCE spellchecker plugin presence
+[#490050] by iva2k: Move TinyMCE spellchecker plugin to sites/all/libraries/...
+[#774546] by iva2k: Redone dependency on wysiwyg_get_path()
+
+
+wysiwyg_spellcheck 6.x-1.2, 2009-06-10
+--------------------------------------
+[#486060] by iva2k: Added 'load' => TRUE code, since new WysiwygAPI 6.x-2.0 became picky about that.
+
+wysiwyg_spellcheck 6.x-1.1, 2009-05-27
+--------------------------------------
+[#474332] by iva2k: Corrected directory names (tinymce/spellchecker) in instructions.
+
+wysiwyg_spellcheck 6.x-0.1, 2009-05-23
+--------------------------------------
+Initial drupal module code for TinyMCE spellchecker plugin.
+

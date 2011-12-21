@@ -1,0 +1,17 @@
+#header {
+	height: 165px;
+	max-height: 165px;
+}
+
+h1#site-name {
+	font-size: 4.4em;
+  font-family: old-standard, serif;
+  font-weight: 700;
+  font-variant: small-caps;
+  width: 600px;
+  padding-top: 10px;
+  line-height: 1.2em;
+}
+
+
+

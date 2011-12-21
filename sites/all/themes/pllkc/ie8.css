@@ -1,0 +1,7 @@
+#page {
+	behavior: url('/PIE.htc');
+}
+
+#ask-us p {
+	behavior: url('/PIE.htc');
+}

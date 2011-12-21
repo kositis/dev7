@@ -1,0 +1,12 @@
+#page {
+	behavior: url('/PIE.htc');
+}
+
+#ask-us p {
+	behavior: url('/PIE.htc');
+}
+
+.post-it {
+	border-image: url('/sites/all/themes/pllkc/images/shadow-page-template.png') 25 25 25 25 stretch stretch;
+	behavior: url('/PIE.htc');
+}

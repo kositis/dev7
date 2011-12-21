@@ -1,0 +1,16 @@
+;----------// Theme info
+  name = PLLKC
+  description = PLLKC is a theme developed for the Public Law Library of King County. It is a sub-theme of Pixture Reloaded, a recolorable, multi-column theme that supports both liquid and fixed width layouts. This is a subtheme - you must first download and install <a href="http://drupal.org/project/adaptivetheme">Adaptivetheme</a>. 
+  core        = 7.x
+  engine      = phptemplate
+  base theme  = pixture_reloaded
+  
+  ;----------// Style sheets
+  ;stylesheets[all][] = admin-section.css
+  ;stylesheets[all][] = forms.css
+  ;stylesheets[all][] = tables.css
+  ;stylesheets[all][] = gpanels-fluid.css
+  ;stylesheets[all][] = colors.css
+  ;stylesheets[all][] = pr.css
+  stylesheets[all][] = common.css
+  ;stylesheets[all][] = local.css

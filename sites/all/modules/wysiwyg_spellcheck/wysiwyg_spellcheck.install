@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * @file
+ * WYSIWYG Spellcheck module install file.
+ */
+/**
+ * Implementation of hook_uninstall().
+ */
+function wysiwyg_spellcheck_uninstall() {
+  db_query("DELETE FROM {variable} WHERE name LIKE 'wysiwyg_spellcheck_%'");
+}
+
+
+/**
+ * Implementation of hook_requirements().
+ */
+function wysiwyg_spellcheck_requirements($phase) {
+  $requirements = array();
+  $t = get_t();
+
+  $tinymce_site = 'http://tinymce.moxiecode.com/download.php';
+
+  switch ($phase) {
+    case 'runtime':
+    // Default will be used - there is no such variable yet.
+    $path = variable_get('wysiwyg_spellcheck_tinymce_spellchecker_location', _wysiwyg_spellcheck_default_path());
+    if (!file_exists($path)) {
+      $requirements['tinymce_spellchecker'] = array(
+        'title' => $t('TinyMCE spellchecker'),
+        'description' => $t('In order for the Wysiwyg TinyMCE spellchecker to work, the TinyMCE spellchecker plugin should be downloaded and put in %path directory', array('!settings' => l('settings', 'admin/settings/wysiwyg/spellcheck'), '%path' => $path)),
+        'severity' => ($phase == 'install') ? REQUIREMENT_WARNING : REQUIREMENT_ERROR,
+        'value' => $t('Third party !tinymce_spellckecker software missing', array('!tinymce_spellckecker' => l('TinyMCE spellchecker plugin', $tinymce_site))),
+      );
+    }
+    elseif (!file_exists("$path/editor_plugin.js") || !file_exists("$path/config.php")) {
+      $requirements['tinymce_spellchecker'] = array(
+        'title' => $t('TinyMCE spellchecker'),
+        'description' => $t('The <code>%path</code> path exists but it appears that the directory structure underneath is incorrect. Please check that <code>%editor_plugin</code> and <code>%config</code> exist.',
+          array('%path' => $path,
+            '%editor_plugin' => "$path/editor_plugin.js",
+            '%config' => "$path/config.php",
+          )),
+        'severity' => $phase == 'install' ? REQUIREMENT_WARNING : REQUIREMENT_ERROR,
+        'value' => $t('TinyMCE spellchecker plugin not properly installed'),
+      );
+    }
+    elseif ($phase == 'runtime') {
+      $requirements['tinymce_spellchecker'] = array(
+        'title' => $t('TinyMCE spellchecker'),
+        'severity' => REQUIREMENT_OK,
+        'value' => $t('Installed correctly'),
+      );
+    }
+  }
+  return $requirements;
+}

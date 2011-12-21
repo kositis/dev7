@@ -1,0 +1,37 @@
+
+To enable this module, follow these instructions:
+
+1. Upload the "Wysiwyg SpellCheck" module to your sites/all/modules folder (don't enable it yet).
+
+2. Install TinyMCE spellchecker plugin
+
+In order to use Spell Checker, you will need to download TinyMCE spellchecker plugin.
+
+The plugin is available from http://tinymce.moxiecode.com/download.php
+
+Download, extract and copy it into sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/.
+
+After installation it should be found in sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/spellchecker/
+
+As a quick check, the following files should be present in the above path:
+- editor_plugin.js
+- config.php
+
+3. Edit sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/spellchecker/config.php
+
+Uncomment one of the lines that select which spellchecker to use:
+
+*It comes with defaults using Google spellchecker.
+
+*Other options: TBD
+
+4. Enable the "Wysiwyg SpellCheck" module on the admin/build/modules page.
+
+5. Visit http://YOURSITE/admin/reports/status, verify that TinyMCE spellchecker	reports "Installed correctly".
+
+6. Visit http://YOURSITE/sites/all/libraries/tinymce/jscripts/tiny_mce/plugins/spellchecker/rpc.php, you should see a string in curly braces {"result":null,...}.
+
+7. Configure one of your WYSIWYG profiles to show TinyMCE spellcheck button
+
+8. Verify that TinyMCE shows the new button when you edit a page using your WYSISWYG profile, and this button works.
+
